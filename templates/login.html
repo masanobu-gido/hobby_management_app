@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="'UTF-8">
+        <title>趣味の時間管理アプリ</title>
+        <style>
+            @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+            
+            body {
+            background: #ffffff;
+            color: #606468;
+            font: 87.5%/1.5em 'Open Sans', sans-serif;
+            margin: 0;
+            }
+            
+            h1 {
+                color: rgb(0, 0, 0);
+                font-weight: normal;
+                line-height: 3;
+                font-size: 50px;
+                position:relative;
+                left: 0px;
+                
+            }
+            p {
+                font-size: 20px;
+                line-height: 1.5em;
+            }
+
+            p1 {
+                font-size: 20px;
+                line-height: 3;
+            }
+
+            input {font-size: 20px;}
+
+            [class*="fontawesome-"]:before {
+            font-family: 'FontAwesome', sans-serif;
+            }
+
+
+            input {
+            border: none;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5em;
+            padding: 0;
+            -webkit-appearance: none;
+            }
+
+            a {
+            border: 0;
+            width: 10%;
+            height: 50px;
+            border-radius: 3px;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            }
+            
+            div {
+                line-height: 0.1;
+            }
+
+            input[type="text"] {
+            background-color: #dfdfdf;
+            border-radius: 0px 3px 3px 0px;
+            color: #000000;
+            margin-bottom: 0em;
+            padding: 0 16px;
+            width: 235px;
+            height: 50px;
+            }
+
+
+            input[type="password"] {
+            background-color: #dfdfdf;
+            border-radius: 0px 3px 3px 0px;
+            color: #000000;
+            margin-bottom: 0em;
+            padding: 0 16px;
+            width: 235px;
+            height: 50px;
+            }
+
+            input[type="submit"] {
+            background: #b5cd60;
+            border: 0;
+            width: 270px;
+            height: 50px;
+            border-radius: 3px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+            }
+            input[type="submit"]:hover {
+            background: #16aa56;
+            }
+        </style>
+       
+    </head>
+    <body>
+    <div align="center">
+        <h1>趣味の時間</h1>
+        <p>このアプリは日常生活の趣味の時間を視覚化し、</p>
+        <p>生活をより豊かにすることを助けるアプリです。</p>
+        
+        <p1>ログインフォーム</p1>
+        <form method="POST">
+            <p><input type="text" name="name" placeholder="UseName"></p>
+            <p><input type="password" name="password" placeholder="Password"></p>
+            <p><input type="submit" value="login"></p>
+        </form>
+        
+        <p2><a href='/signup' >新規登録はこちら</a></p2>
+    </div>
+    </body>
+</html>

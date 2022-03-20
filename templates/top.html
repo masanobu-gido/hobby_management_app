@@ -1,0 +1,60 @@
+<!--<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+        <meta charset="'UTF-8">
+        <title>趣味の時間管理アプリ</title>
+    </head>
+    <body>
+        <h1>ようこそ{{name}}さん</h1>
+        <p>このアプリは日常生活に趣味の時間を意識的に取り入れることで、</p>
+        <p>生活をより豊かにすることを助けるアプリです。</p>
+        <p><a href="/log", role="button">log登録</a></p>
+        <p><a href="/new_hobby">趣味登録</a></p>
+        <p><a href="C:\Users\gnobu\makeapp\account.html">アカウント情報</a></p>
+        <p><a href="C:\Users\gnobu\makeapp\logout.html">logout</a></p>
+    </body>
+</html>
+-->
+{% extends 'base.html' %}
+{% block content %}
+    <h1>趣味の時間</h1>
+    <h2>こんにちは、{{user}} さん</h2>
+    <a href="/log" class="btn-radius-solid">  ログ登録  </a>
+    <a href="/account" class="btn-radius-solid">  アカウント情報  </a>
+    <a href="/login" class="btn-radius-solid">  ログアウト  </a>
+    
+    <p>～趣味グラフ（時間×充実度）～</p>
+    <table class="charts-css column show-labels show-primary-axis show-4-secondary-axes data-spacing-10", id="my_chart">
+        <caption>趣味グラフ</caption>
+        <thead>
+            <tr>
+                <th scope="col"> Hobby </th>
+                <th scope="col"> Score </th>
+            </tr>
+        </thead> 
+
+        <tbody>
+            {% for s in score %}
+            <tr>
+                <th scope="row"> {{s}} </th>
+                <td style="--size: calc( {{score[s]}} / {{max_score*1.2}} )">{{score[s]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>～過去のログ～</p>
+    {% for logarticle in logarticles[::-1] %}
+        {% if logarticle.user_id == current_user.id %}
+       <article class="log">
+            <h2>{{logarticle.hobby}}</h2>
+            <!--<p>log_id：{{logarticle.log_id}}</p>-->
+            <p>作成日時：{{logarticle.created_at}}</p>
+            <p>時間：{{logarticle.time}}min</p>
+            <p>充実度：{{logarticle.feeling}}</p>
+            <a href="/edit/{{logarticle.log_id}}">編集</a>
+            <!--<p>user_id：{{logarticle.user_id}}</p>-->
+        </article>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="Viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+
+        <style>
+            body {
+                background-color: rgb(255, 255, 255);
+            }
+
+            h1 {
+                font: 3rem 'Fira Sans', sans-serif;
+            }
+
+            h2 {
+                font: 2rem 'Fira Sans', sans-serif;
+            }
+
+            a[class="btn-radius-solid"] {
+                                            background: #b4b7cc;
+                                            border: 0;
+                                            font-size: 1.7rem;
+                                            width: 9%;
+                                            height: 50px;
+                                            color: rgb(66, 66, 66);
+                                            cursor: pointer;
+                                            transition: background 0.3s ease-in-out;
+                                            text-decoration: none;
+                                            border: 2px black solid;
+            }
+            a[class="btn-radius-solid"]:hover {
+                                            background: #504896;
+                                            color: whitesmoke;
+            }
+
+            table[id='my_chart'] {
+                                    padding: 1.5rem;
+                                    font: 1rem 'Fira Sans', sans-serif;
+                                    margin: 2px;
+                                    width: 500px;
+                                    height: 400px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+            }
+
+            article[class='log'] {
+                                    padding: 1.5rem;
+                                    background-color: rgb(255, 255, 255);
+                                    font: 1rem 'Fira Sans', sans-serif;
+                                    margin: 1ex;
+                                    width: 400px;
+                                    height: 220px;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    border: #b4b7cc thick double;
+                                }
+            
+            input[type="text"] {
+                                    background-color: #dfdfdf;
+                                    border-radius: 0px 3px 3px 0px;
+                                    color: #000000;
+                                    margin-bottom: 0em;
+                                    padding: 0 16px;
+                                    width: 235px;
+                                    height: 50px;
+            }
+
+            input[type="int"] {
+                                    background-color: #dfdfdf;
+                                    border-radius: 0px 3px 3px 0px;
+                                    color: #000000;
+                                    margin-bottom: 0em;
+                                    padding: 0 16px;
+                                    width: 235px;
+                                    height: 50px;
+            }
+
+            input[type="submit"] {
+                                    background: #b4b7cc;
+                                    border: 0;
+                                    width: 60px;
+                                    height: 50px;
+                                    border-radius: 3px;
+                                    color: black;
+                                    cursor: pointer;
+                                    transition: background 0.3s ease-in-out;
+            }
+            input[type="submit"]:hover {
+                                            background: #504896;
+                                            color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div align="center">
+        {% block content %}
+        {% endblock %}
+        <p2><a href='/'>topへ戻る</a></p2>
+        </div>
+    </body>
+</html>
