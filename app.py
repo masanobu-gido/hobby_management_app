@@ -44,7 +44,7 @@ class LogArticle(db.Model):
 
 
 @app.route('/')
-@login_required
+#@login_required
 def top():
     if request.method == 'GET':
         logarticles = LogArticle.query.all()
