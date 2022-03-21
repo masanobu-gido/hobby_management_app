@@ -9,7 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from score import hobby_score, hobby
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hobby.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:mg-94371210@localhost/hobbysql'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SECRET_KEY'] = os.urandom(24)
 
@@ -26,8 +26,8 @@ def load_user(user_id):
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), nullable=False, unique=True)
-    password = db.Column(db.String(20))
+    username = db.Column(db.Text(), nullable=False, unique=True)
+    password = db.Column(db.Text())
     
 
 
@@ -164,5 +164,5 @@ def delete(id):
 
 
 if __name__ == '__main__':
-    #db.create_all()
+    db.create_all()
     app.run(debug=True)
