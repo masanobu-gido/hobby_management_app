@@ -43,8 +43,8 @@ class LogArticle(db.Model):
 
 
 
-@app.route('/')
-#@login_required
+@app.route('/top')
+@login_required
 def top():
     if request.method == 'GET':
         logarticles = LogArticle.query.all()
@@ -64,7 +64,7 @@ def signup():
             user = User(username=username, password=generate_password_hash(password, method='sha256'))
             db.session.add(user)
             db.session.commit()
-            return redirect('/login')
+            return redirect('/')
     else:
         return render_template('signup.html')
 
@@ -74,7 +74,7 @@ def signup():
 #    return redirect('/signup')
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form.get('name')
@@ -89,7 +89,7 @@ def login():
         
         if check_password_hash(user.password, password):
             login_user(user)
-            return redirect('/')
+            return redirect('/top')
         else:
             return render_template('relogin.html')
         
@@ -101,7 +101,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect('/login')
+    return redirect('/')
 
 
 @app.route('/log', methods=['GET', 'POST'])
@@ -115,7 +115,7 @@ def log():
         logarticle = LogArticle(user_id=user_id, hobby=hobby, time=time, feeling=feeling)
         db.session.add(logarticle)
         db.session.commit()
-        return redirect('/')
+        return redirect('/top')
     else:
         return render_template('log.html')
 
@@ -134,6 +134,7 @@ def new_hobby():
 """
 
 @app.route('/account')
+@login_required
 def account():
     hobbies = hobby(current_user.id)
     return render_template('account.html', user=current_user.username, hobbies=hobbies)
@@ -150,7 +151,7 @@ def edit(id):
         logarticle.time = request.form.get('time')
         logarticle.feeling = request.form.get('feeling')
         db.session.commit()
-        return redirect('/')
+        return redirect('/top')
 
 
 @app.route('/delete/<int:id>', methods=['GET'])
@@ -159,7 +160,7 @@ def delete(id):
     logarticle = LogArticle.query.get(id)
     db.session.delete(logarticle)
     db.session.commit()
-    return redirect('/')
+    return redirect('/top')
 
 
 if __name__ == '__main__':
