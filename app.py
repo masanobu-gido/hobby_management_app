@@ -29,6 +29,7 @@ def load_user(user_id):
 
 
 class User(UserMixin, db.Model):
+    __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.Text(), nullable=False, unique=True)
     password = db.Column(db.Text())
@@ -167,6 +168,10 @@ def delete(id):
     return redirect('/top')
 
 
-if __name__ == '__main__':
+@app.before_first_request
+def init():
     db.create_all()
+
+if __name__ == '__main__':
+    #db.create_all()
     app.run(debug=True)
