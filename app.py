@@ -37,7 +37,7 @@ class User(UserMixin, db.Model):
 
 
 class LogArticle(db.Model):
-    __tablename__ = 'hobbes'
+    __tablename__ = 'hobbies'
     user_id = db.Column(db.Integer, nullable=False)
     log_id = db.Column(db.Integer, primary_key=True)
     hobby = db.Column(db.String(50), nullable=False)
@@ -167,10 +167,6 @@ def delete(id):
     db.session.commit()
     return redirect('/top')
 
-
-@app.before_first_request
-def init():
-    db.create_all()
 
 if __name__ == '__main__':
     #db.create_all()

@@ -17,7 +17,7 @@ def hobby_score(user_id):
     try:
         
         #df = pd.read_sql("SELECT * FROM hobbes;", engine)
-        df = pd.read_sql_table("SELECT * FROM hobbes;", connection) 
+        df = pd.read_sql_table("SELECT * FROM hobbies;", connection) 
         df.loc[:, 'time*feeling'] = df.loc[:, 'time'] * df.loc[:, 'feeling']
         user_df = df[df["user_id"] == user_id]
         #print(user_df.head())
@@ -49,7 +49,7 @@ def hobby(user_id):
     DATABASE_URL = "postgres://lkmpgyrwoildlh:20528f08836974c86b49632c641133e72432643b3b92193a18b0143787632739@ec2-174-129-243-38.compute-1.amazonaws.com:5432/d2g6vau23oegqv"
     connection = pg.connect(DATABASE_URL, sslmode='require')
     try:
-        df = pd.read_sql("SELECT * FROM hobbes;", connection)
+        df = pd.read_sql("SELECT * FROM hobbies;", connection)
         user_df = df[df["user_id"] == user_id]
         hobbies = user_df["hobby"].unique()
         connection.close()
