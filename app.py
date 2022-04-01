@@ -9,7 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from score import hobby_score, hobby
 
 app = Flask(__name__)
-app.config['DATABASE_URL'] = "postgres://lkmpgyrwoildlh:20528f08836974c86b49632c641133e72432643b3b92193a18b0143787632739@ec2-174-129-243-38.compute-1.amazonaws.com:5432/d2g6vau23oegqv"
+#app.config['DATABASE_URL'] = "postgres://lkmpgyrwoildlh:20528f08836974c86b49632c641133e72432643b3b92193a18b0143787632739@ec2-174-129-243-38.compute-1.amazonaws.com:5432/d2g6vau23oegqv"
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://lkmpgyrwoildlh:20528f08836974c86b49632c641133e72432643b3b92193a18b0143787632739@ec2-174-129-243-38.compute-1.amazonaws.com:5432/d2g6vau23oegqv"
 #app.config['DATABASE_URL'] = 'postgres://gpwjeheomhdmfu:afe549ec72373ac34258388ca47b4e8a18281263998b9f773860a7c8b522e2fb@ec2-3-222-204-187.compute-1.amazonaws.com:5432/davqklevog6vet'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:mg-94371210@localhost/hobbysql'
