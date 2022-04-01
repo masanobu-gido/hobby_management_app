@@ -8,9 +8,8 @@ def hobby_score(user_id):
     #connection = pg.connect("host='localhost' port=5432 dbname=hobbysql user=postgres password='mg-94371210'")
     #connection = pg.connect("host='ec2-174-129-243-38.compute-1.amazonaws.com' port=5432 dbname=d2g6vau23oegqv user=lkmpgyrwoildlh password='20528f08836974c86b49632c641133e72432643b3b92193a18b0143787632739'")
     #connection = pg.connect("host=ec2-174-129-243-38.compute-1.amazonaws.com dbname=d2g6vau23oegqv user=lkmpgyrwoildlh port=5432 password=20528f08836974c86b49632c641133e72432643b3b92193a18b0143787632739")
-    #DATABASE_URL = "postgres://lkmpgyrwoildlh:20528f08836974c86b49632c641133e72432643b3b92193a18b0143787632739@ec2-174-129-243-38.compute-1.amazonaws.com:5432/d2g6vau23oegqv"
-    #DATABASE_URL = 'postgres://gpwjeheomhdmfu:afe549ec72373ac34258388ca47b4e8a18281263998b9f773860a7c8b522e2fb@ec2-3-222-204-187.compute-1.amazonaws.com:5432/davqklevog6vet'
-    DATABASE_URL = os.environ['DATABASE_URL']
+    DATABASE_URL = "postgresql://cgvseezlvtzxod:eed3e7396bd98e1257437df3edf100de08747552527c394cbdc3806a0a0da8a1@ec2-3-223-213-207.compute-1.amazonaws.com:5432/dbcv1f5ohpj2vi"
+    #DATABASE_URL = os.environ['DATABASE_URL']
     #print(DATABASE_URL)
     connection = pg.connect(DATABASE_URL, sslmode='require')
     #engine = sqlalchemy.create_engine(DATABASE_URL).raw_connection()
@@ -47,8 +46,8 @@ def hobby(user_id):
     #connection = pg.connect("host='ec2-3-222-204-187.compute-1.amazonaws.com' port=5432 dbname=davqklevog6vet user=gpwjeheomhdmfu password='afe549ec72373ac34258388ca47b4e8a18281263998b9f773860a7c8b522e2fb'", sslmode='require')
     #connection = pg.connect("host='ec2-174-129-243-38.compute-1.amazonaws.com' port=5432 dbname=d2g6vau23oegqv user=lkmpgyrwoildlh password='20528f08836974c86b49632c641133e72432643b3b92193a18b0143787632739'")
     #connection = pg.connect("host='localhost' port=5432 dbname=hobbysql user=postgres password='mg-94371210'")
-    #DATABASE_URL = "postgres://lkmpgyrwoildlh:20528f08836974c86b49632c641133e72432643b3b92193a18b0143787632739@ec2-174-129-243-38.compute-1.amazonaws.com:5432/d2g6vau23oegqv"
-    DATABASE_URL = os.environ['DATABASE_URL']
+    DATABASE_URL = "postgresql://cgvseezlvtzxod:eed3e7396bd98e1257437df3edf100de08747552527c394cbdc3806a0a0da8a1@ec2-3-223-213-207.compute-1.amazonaws.com:5432/dbcv1f5ohpj2vi"
+    #DATABASE_URL = os.environ['DATABASE_URL']
     connection = pg.connect(DATABASE_URL, sslmode='require')
     try:
         df = pd.read_sql("SELECT * FROM hobbies;", connection)
