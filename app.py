@@ -54,9 +54,8 @@ class LogArticle(db.Model):
 def top():
     if request.method == 'GET':
         logarticles = LogArticle.query.all()
-        users = User.query.all()
-        score, max_score = hobby_score(current_user.id)
-        return render_template('top.html', logarticles=logarticles, user=current_user.username, score=score, max_score=max_score)
+        score_dict, max_score, log_ids = hobby_score(current_user.id)
+        return render_template('top.html', logarticles=logarticles, user=current_user.username, score_dict=score_dict, max_score=max_score, log_ids=log_ids)
     
 
 @app.route('/signup', methods=['GET', 'POST'])

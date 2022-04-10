@@ -24,7 +24,7 @@
     <a href="/account" class="btn-radius-solid">  アカウント情報  </a>
     <a href="/" class="btn-radius-solid">  ログアウト  </a>
     
-    <p>～趣味グラフ（時間×充実度）～</p>
+    <p>～過去一週間の趣味グラフ（時間×充実度）～</p>
     <table class="charts-css column show-labels show-primary-axis show-4-secondary-axes data-spacing-10", id="my_chart">
         <caption>趣味グラフ</caption>
         <thead>
@@ -35,18 +35,18 @@
         </thead> 
 
         <tbody>
-            {% for s in score %}
+            {% for s in score_dict %}
             <tr>
                 <th scope="row"> {{s}} </th>
-                <td style="--size: calc( {{score[s]}} / {{max_score*1.2}} )">{{score[s]}}</td>
+                <td style="--size: calc( {{score_dict[s]}} / {{max_score*1.2}} )">{{score_dict[s]}}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <p>～過去のログ～</p>
+    <p>～過去一週間のログ～</p>
     {% for logarticle in logarticles[::-1] %}
-        {% if logarticle.user_id == current_user.id %}
-       <article class="log">
+        {% if logarticle.log_id in log_ids %}
+        <article class="log">
             <h2>{{logarticle.hobby}}</h2>
             <!--<p>log_id：{{logarticle.log_id}}</p>-->
             <p>作成日時：{{logarticle.created_at}}</p>
