@@ -21,7 +21,7 @@ def hobby_score(user_id):
         df.loc[:, 'time*feeling'] = df.loc[:, 'time'] * df.loc[:, 'feeling']
         user_df = df[df["user_id"] == user_id]
         user_df = user_df[user_df["created_at"] > now - datetime.timedelta(days=7)]
-        print(user_df.head())
+        #print(user_df.head())
         log_ids = user_df["log_id"].tolist()
         #print(user_df["hobby"].unique())
         hobbies = user_df["hobby"].unique()
