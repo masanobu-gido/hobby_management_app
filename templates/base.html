@@ -15,10 +15,12 @@
 
             h1 {
                 font: 3rem 'Open Sans', sans-serif;
+                
             }
 
             h2 {
                 font: 2rem 'Open Sans', sans-serif;
+                
             }
 
             a[class="btn-radius-solid"] {
@@ -30,13 +32,54 @@
                                             color: rgb(66, 66, 66);
                                             cursor: pointer;
                                             transition: background 0.3s ease-in-out;
-                                            text-decoration: none;
-                                            border: 2px black solid;
+                                            text-decoration: none;                              
             }
+
+
+
             a[class="btn-radius-solid"]:hover {
                                             background: #504896;
                                             color: whitesmoke;
+                                            
             }
+
+            
+            a[class='circle-btn'] {
+                                            background: #b4b7cc;
+                                            border: 0;
+                                            font-size: 1.3rem;
+                                            color: rgb(66, 66, 66);
+                                            cursor: pointer;
+                                            transition: background 0.3s ease-in-out;
+                                            text-decoration: none;  
+                                            height: 50px;
+                                            width: 50px;
+                                            border-radius: 50%;
+                                            position: fixed;
+                                            z-index: 0;
+                                            bottom: 5%;
+                                            right: 5%;    
+                                            line-height: 50px;   
+                                            opacity: 0.8;                  
+            }
+
+            a[class='circle-btn']:hover {
+                                            background: #504896;
+                                            color: whitesmoke;
+                                            
+            }
+
+            div1 {
+                height: 238px;
+                width: 100%;
+                position: fixed;
+                z-index: 999;
+                top: 0;
+                left: 0;
+                background: #b4b7cc;
+            }
+
+            
 
             table[id='my_chart'] {
                                     padding: 1.5rem;
@@ -60,6 +103,12 @@
                                     border: #b4b7cc thick double;
                                 }
             
+            div2 {
+                position: relative;
+                top: 240px;
+            }
+
+
             input[type="text"] {
                                     background-color: #dfdfdf;
                                     border-radius: 3px 3px 3px 3px;

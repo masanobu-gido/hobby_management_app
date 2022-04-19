@@ -18,12 +18,14 @@
 -->
 {% extends 'base.html' %}
 {% block content %}
+    <div1>
     <h1>趣味の時間</h1>
     <h2>こんにちは、{{user}} さん</h2>
     <a href="/log" class="btn-radius-solid">  ログ登録  </a>
     <a href="/account" class="btn-radius-solid">  アカウント情報  </a>
     <a href="/" class="btn-radius-solid">  ログアウト  </a>
-    
+    </div1>
+    <div2>
     <p>～過去一週間の趣味グラフ（時間×充実度）～</p>
     <table class="charts-css column show-labels show-primary-axis show-4-secondary-axes data-spacing-10", id="my_chart">
         <caption>趣味グラフ</caption>
@@ -47,7 +49,7 @@
     {% for logarticle in logarticles[::-1] %}
         {% if logarticle.log_id in log_ids %}
         <article class="log">
-            <h2>{{logarticle.hobby}}</h2>
+            <p style="font-size: 1.5rem;">{{logarticle.hobby}}</p>
             <!--<p>log_id：{{logarticle.log_id}}</p>-->
             <p>作成日時：{{logarticle.created_at}}</p>
             <p>時間：{{logarticle.time}}min</p>
@@ -57,4 +59,6 @@
         </article>
         {% endif %}
     {% endfor %}
+    <p><a href='#' class="circle-btn">top</a></p>
+    </div2>
 {% endblock %}
