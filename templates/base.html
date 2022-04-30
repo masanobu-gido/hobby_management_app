@@ -6,8 +6,13 @@
         <title></title>
         <meta name="Viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
                 
         <style>
+            html{
+                scroll-behavior: smooth;
+            }
+
             body {
                 background-color: rgb(255, 255, 255);
                 font: 87.5%/1.5em 'Open Sans', sans-serif;
@@ -44,23 +49,39 @@
             }
 
             
-            a[class='circle-btn'] {
-                                            background: #b4b7cc;
-                                            border: 0;
-                                            font-size: 1.3rem;
-                                            color: rgb(66, 66, 66);
-                                            cursor: pointer;
-                                            transition: background 0.3s ease-in-out;
-                                            text-decoration: none;  
-                                            height: 50px;
-                                            width: 50px;
-                                            border-radius: 50%;
-                                            position: fixed;
-                                            z-index: 0;
-                                            bottom: 5%;
-                                            right: 5%;    
-                                            line-height: 50px;   
-                                            opacity: 0.8;                  
+            p[class='top-btn'] {
+                                width: 50px;
+                                height: 50px;
+                                position: fixed;
+                                right: 0;
+                                bottom: 0;
+                                background: #b4b7cc;
+                                opacity: 0.6;              
+            }
+
+            a[class="top-btn"]{
+                                position: relative;
+                                display: block;
+                                width: 50px;
+                                height: 50px;
+                                text-decoration: none;
+            }
+
+            a[class="top-btn"]::before{
+                                font-family: 'Font Awesome 5 Free';
+                                font-weight: 900;
+                                content: '\f102';
+                                font-size: 25px;
+                                color: #fff;
+                                position: absolute;
+                                width: 25px;
+                                height: 25px;
+                                top: 0;
+                                bottom: 0;
+                                right: 0;
+                                left: 0;
+                                margin: auto;
+                                text-align: center;
             }
                                             
 
